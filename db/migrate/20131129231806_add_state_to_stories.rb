@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStateToStories < ActiveRecord::Migration
   def change
     add_column :stories, :state, :string

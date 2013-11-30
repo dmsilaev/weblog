@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Web::SessionsController < Web::ApplicationController
   def new
     if signed_in?

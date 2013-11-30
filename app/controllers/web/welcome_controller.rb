@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Web::WelcomeController < Web::ApplicationController
   def index
     @stories = params[:tag].present? ? Story.tagged_with(params[:tag]) : Story

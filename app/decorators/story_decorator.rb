@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class StoryDecorator < Draper::Decorator
   delegate_all
 

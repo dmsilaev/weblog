@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Weblog::Application.routes.draw do
 
   root to: 'web/welcome#index'

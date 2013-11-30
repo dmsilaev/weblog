@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Concerns
   module FlashHelper
     def f(key, options = {})

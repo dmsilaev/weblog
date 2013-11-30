@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Web::Admin::StoriesController < Web::Admin::ApplicationController
   def index
     @search_params = params[:q] || {}

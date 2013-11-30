@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Web::StoriesController < Web::ApplicationController
   authorize_resource
 

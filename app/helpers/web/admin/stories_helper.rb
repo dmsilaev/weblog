@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Web::Admin::StoriesHelper
   def publish_links(query)
     case query[:publish]
