@@ -32,6 +32,7 @@ gem "ransack"
 gem 'draper', '~> 1.3'
 gem 'kaminari'
 gem 'state_machine'
+gem 'excon', '~> 0.21.0'
 
 group :test do
   gem 'test_after_commit'

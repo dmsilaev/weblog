@@ -5,4 +5,4 @@ before_script:
 deploy:
   provider: heroku
   api_key: 028ae5dae2ae1db4d7eef135fdf1d6be558a8dba
-  app: weblog
+  run: "rake db:migrate; rake db:create"
