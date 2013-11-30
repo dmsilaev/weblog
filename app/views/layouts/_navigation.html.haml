@@ -1,0 +1,16 @@
+.header
+  .headerleft
+    %a#l_holder{href: "/", style: "background-color: #ff0000;", title: "Lobsters (183)"}
+    %span.headerlinks
+      = link_to t('.root_path'), root_path
+  .headerright
+    %span.headerlinks
+      - if signed_in?
+        - if current_user.admin?
+          = link_to t('.admin_root_path'), admin_root_path
+        = link_to t('.new_story_path'), new_story_path
+        = link_to t('.logout_path'), session_path, method: :delete
+      - else
+        = link_to t('.new_user_path'), new_user_path
+        = link_to t('.new_session_path'), new_session_path
+  .clear

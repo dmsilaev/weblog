@@ -1,0 +1,18 @@
+.box.wide
+  .legend
+    = t('.title')
+  = simple_form_for(@user, as: :user) do |f|
+    = f.input :email
+    %br
+    = f.input :login
+    %br
+    = f.input :first_name
+    %br
+    = f.input :last_name
+    %br
+    = f.input :password
+    %br
+    = f.input :password_confirmation
+    %br
+    %br
+    = f.button :submit

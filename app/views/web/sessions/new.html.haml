@@ -1,0 +1,10 @@
+.box.wide
+  .legend
+    = t('.title')
+  = simple_form_for(@session, url: session_path, as: :session) do |f|
+    = f.input :email_or_login
+    %br
+    = f.input :password
+    %br
+    %br
+    = f.button :submit

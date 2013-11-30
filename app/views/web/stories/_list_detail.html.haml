@@ -1,0 +1,19 @@
+%li.story{ id: "story_#{story.id}" }
+  .voters
+  .details
+    %span.link
+      = link_to story.title, story.url
+    %span.tags
+      - story.tag_list.each do |tag|
+        = link_to tag, stories_by_tag_path(tag), q: tag, class: "tag tag_#{tag}"
+    %span.domain
+      = story.domain
+    .byline
+      = t('.by')
+      = link_to story.user.login, root_path
+      %span{ title: story.created_at }
+        = time_ago_in_words(story.created_at)
+        = t('.ago')
+      |
+      = link_to t('.discuss'), story_path(story)
+

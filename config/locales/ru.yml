@@ -1,0 +1,28 @@
+ru:
+  layouts:
+    navigation:
+      root_path: Главная
+      new_user_path: Регистрация
+      new_session_path: Вход
+      logout_path: Выход
+      new_story_path: Отправить историю
+      admin_root_path: Админка
+  web:
+    sessions:
+      new:
+        title: Вход
+    users:
+      new:
+        title: Регистрация
+    stories:
+      new:
+        title: Добавить в лог
+      list_detail:
+        by: от
+        ago: назад
+        discuss: Обсуждение
+    admin:
+      welcome:
+        index:
+          title: Администрирование
+          admin_stories_path: Истории

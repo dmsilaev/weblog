@@ -1,0 +1,16 @@
+.box.wide
+  .legend
+    = t('.title')
+  .story-holder
+    = simple_form_for(@story, as: :story) do |f|
+      .box
+        .boxline
+          = f.input :title
+        .boxline
+          = f.input :url
+        .boxline
+          = f.input :description
+        .boxline
+          = f.input :tag_list
+          %br
+          = f.button :submit

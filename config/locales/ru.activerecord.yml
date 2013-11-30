@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        story:
+          attributes:
+            url:
+              url: "неверный формат url'а"
+              url_unavailable: "url недоступен"
