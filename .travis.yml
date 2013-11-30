@@ -5,6 +5,6 @@ deploy:
   provider: heroku
   api_key:
     secure: QlvKpHuuiMwIIqMfpzDdSQlmGcd4LFh+6whqcYqE/O0nLgxynR/eJX0M4tVYWhvqTrGjDQjcaRjaHsEAJ3jqOnBCQHAdGHTrneC4twsOACxQLIwaRkUZjQww497ZxMsBGSLZ3wwwjB6kGKwgAvcdnd2ALM2EvMT+aLZiCZSRtZI=
-  app: weblog
+  app: test_weblog
   on:
     repo: dmsilaev/weblog
