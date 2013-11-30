@@ -1,4 +1,8 @@
 before_script:
   - cp ./config/database.example.yml ./config/database.yml
-  # - psql -c 'create database spb_kv_test;' -U postgres
   - rake db:setup RAILS_ENV=test
+
+deploy:
+  provider: heroku
+  api_key: 028ae5dae2ae1db4d7eef135fdf1d6be558a8dba
+  app: weblog
