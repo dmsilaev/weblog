@@ -20,3 +20,4 @@
 /public/system
 /public/uploads
 *.dump
+*.DS_Store
