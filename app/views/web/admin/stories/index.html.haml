@@ -5,7 +5,7 @@
     %tr
       %th{ width: "8%" }
         =simple_form_for(@search, url: admin_stories_path, method: :get ) do |f|
-          = f.input :state_eq, label: false, as: :select,  input_html: { onchange: "this.form.submit()" }, collection: {t('.all') => nil, t('.new') => 'new', t('.published') => 'published'}, required: false, selected: @search_params[:state_eq]
+          = f.input :state_eq, label: false, as: :select,  input_html: { onchange: "this.form.submit()" }, collection: {t('.table.state.all') => nil, t('.table.state.new') => 'new', t('.table.state.published') => 'published'}, required: false, selected: @search_params[:state_eq]
           %noscript
             =f.submit
       %th{ width: "28%" }=t('.table.title')
@@ -14,7 +14,7 @@
       %th{ width: "16%"}=t('table.actions')
     - @stories.each do |story|
       %tr
-        %td=story.published? ? t('.published') : (link_to t('.publish'), api_admin_story_path(story, state_event: :publish), remote: true, method: 'put', class: 'change_state')
+        %td=story.published? ? t('.table.actions.published') : (link_to t('.table.actions.publish'), api_admin_story_path(story, state_event: :publish), remote: true, method: 'put', class: 'change_state')
         %td=link_to story.title, story.url
         %td
           - story.tag_list.each do |tag|

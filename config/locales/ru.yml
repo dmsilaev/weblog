@@ -26,3 +26,22 @@ ru:
         index:
           title: Администрирование
           admin_stories_path: Истории
+      stories:
+        index:
+          title: Истории
+          table:
+            title: Заголовок
+            tags: Теги
+            creator: Отправил
+            state:
+              all: Все
+              new: Новые
+              published: Опубликованные
+            actions:
+              publish: Опубликовать
+              show: Просмотреть
+              edit: Изменить
+              destroy: Удалить
+              published: Опубликовано
+  table:
+    actions: Действия
