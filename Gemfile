@@ -51,6 +51,10 @@ group :test, :development do
   gem 'factory_girl_rails'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
