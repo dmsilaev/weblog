@@ -2,7 +2,7 @@
   .voters
   .details
     %span.link
-      = link_to story.title, story.url
+      = link_to story.title, story.url, :target => "_blank"
     %span.tags
       - story.tag_list.each do |tag|
         = link_to tag, stories_by_tag_path(tag), q: tag, class: "tag tag_#{tag}"
