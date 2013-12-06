@@ -33,6 +33,8 @@ ru:
         create: 'Зарегистрироваться'
       story:
         create: 'Отправить'
+      story_comment:
+        create: 'Отправить'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'

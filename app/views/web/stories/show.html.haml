@@ -1,3 +1,12 @@
 %ol.stories
   = render partial: "web/stories/list_detail", locals: { story: @story }
-= @story.description
+.story_content
+  - if @story.description?
+    .story_text
+      = @story.description
+  .comments.comments1
+    = render partial: 'web/stories/comments/comment', collection: @comments, as: :comment
+  .nested_comments
+  - if signed_in?
+    = link_to t('.comment_link'), '#', class: 'comment_link'
+    = render partial: "web/stories/comments/form"

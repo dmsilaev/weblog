@@ -11,7 +11,7 @@ class Api::Admin::StoriesControllerTest < ActionController::TestCase
 
   test "should update story" do
     assert !@story.published?
-    put :update, id: @story.id, state_event: :publish
+    put :update, id: @story.id, state_event: :publish, format: :json
     assert_response :success
     @story.reload
     assert { @story.published? }

@@ -3,6 +3,7 @@ class Story < ActiveRecord::Base
   acts_as_taggable
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   validates :url, presence: true, uniqueness: true, url: true
   validates :title, presence: true

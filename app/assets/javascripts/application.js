@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+  /* TODO: jquery says live() is slow and bad, what is supposed to be used? */
+
+
+

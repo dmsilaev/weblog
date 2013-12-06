@@ -1,0 +1,15 @@
+.comment{ id: "comment#{comment.id}"}
+  .voters
+  .details
+    .byline
+      = link_to comment.user.login, root_path #TODO: сделать страницу пользователя
+      = time_ago_in_words(comment.created_at)
+      = t('.ago')
+      = link_to t('.link'), "#{story_path(comment.story)}#comment#{comment.id}"
+      = link_to t('.add_nested_comment'), "#{story_path(comment.story)}#comment#{comment.id}", class: 'nested_comment', data_id: comment.id
+    .comment_text
+      = comment.body
+  .nested_comments
+    - if comment.children.any?
+      - comment.children.each do |com, sub_com|
+        = render 'web/stories/comments/comment', comment: com

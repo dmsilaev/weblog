@@ -18,5 +18,7 @@ class Web::StoriesController < Web::ApplicationController
 
   def show
     @story = Story.find(params[:id])
+    @comment = Story::Comment.new
+    @comments = @story.comments
   end
 end

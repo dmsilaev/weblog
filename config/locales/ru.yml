@@ -15,6 +15,13 @@ ru:
       new:
         title: Регистрация
     stories:
+      comments:
+        comment:
+          add_nested_comment: '| Ответить'
+          ago: назад
+          link: '| Cсылка'
+      show:
+        comment_link: Написать комментарий
       new:
         title: Добавить в лог
       list_detail:

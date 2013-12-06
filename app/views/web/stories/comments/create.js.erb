@@ -1,0 +1,9 @@
+comment_form = $("#new_story_comment");
+comment_link = $(".comment_link");
+parent_field = $("#story_comment_parent_id");
+comment = "<%= escape_javascript(render partial: 'web/stories/comments/comment', locals: {comment: @comment} ) %>";
+
+comment_form.siblings(".nested_comments").append(comment);
+
+comment_form.value('');
+comment_link.click();

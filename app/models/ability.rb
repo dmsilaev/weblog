@@ -8,6 +8,8 @@ class Ability
     # guest user (not logged in)
     if !user.guest?
       can [:new, :create, :show], Story
+      # can [:create], Story::Comment
+      # can [:create], Comment
     else
       can :read, :all
     end

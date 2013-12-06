@@ -43,6 +43,8 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
+    ancestry (2.0.0)
+      activerecord (>= 3.0.0)
     ansi (1.4.3)
     arel (4.0.1)
     atomic (1.1.14)
@@ -53,6 +55,10 @@ GEM
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
     cancan (1.6.10)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     ci_reporter (1.9.0)
@@ -270,9 +276,11 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  ancestry
   anjlab-bootstrap-rails!
   bcrypt-ruby (~> 3.1.2)
   cancan
+  carrierwave
   ci_reporter
   ckeditor
   coffee-rails (~> 4.0.0)

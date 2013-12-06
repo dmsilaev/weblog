@@ -6,7 +6,11 @@ Weblog::Application.routes.draw do
 
   scope module: :web do
     resources :users, only: [:new, :create]
-    resources :stories, only: [:new, :create, :show]
+    resources :stories, only: [:new, :create, :show] do
+      scope :module => :stories do
+          resources :comments, only: [:create]
+      end
+    end
     resource :session, only: [:new, :create, :destroy]
     namespace :admin do
       root to: 'welcome#index'
@@ -17,6 +21,9 @@ Weblog::Application.routes.draw do
   namespace :api do
     namespace :admin do
       resources :stories, only: [:update]
+    end
+    resources :stories, only: [] do
+
     end
   end
   # scope module: :web do
