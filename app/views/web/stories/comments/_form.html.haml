@@ -1,11 +1,9 @@
-.comment_form_container
-  %div{style: "width: '100%;" }
-  = simple_form_for(@comment, url: story_comments_path(@story.id), as: :story_comment, remote: true, html: { class: 'form-inline' }) do |f|
-    = f.hidden_field :parent_id, value: nil
-    = f.input :body, input_html: { rows: 5, style: "width: 100%;", autocomplete: "off" }, label: false
-    %p
-    .markdown_help_toggler
-      / .markdown_help_label Markdown formatting available
-      = f.button :submit, as: :button, class: "comment-post"
-      / %div{style: "clear: both;"}
-      / = render :partial => "web/global/markdownhelp"
+= simple_form_for(@comment, url: story_comments_path(@story.id), as: :story_comment, remote: true, html: { class: 'form-inline' }) do |f|
+  = f.hidden_field :parent_id, value: nil
+  = f.input :body, input_html: { rows: 5, style: "width: 100%;", autocomplete: "off" }, label: false
+  %p
+  .markdown_help_toggler
+    / .markdown_help_label Markdown formatting available
+    = f.button :submit, as: :button, class: "comment-post"
+    / %div{style: "clear: both;"}
+    / = render :partial => "web/global/markdownhelp"

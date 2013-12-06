@@ -213,6 +213,9 @@ input:disabled, button:disabled {
 
 
 /* outliners */
+body {
+    padding-bottom: 1.5em;
+}
 
 .wrapper {
         margin-left: auto;
