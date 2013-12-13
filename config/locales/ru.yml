@@ -33,6 +33,7 @@ ru:
         index:
           title: Администрирование
           admin_stories_path: Истории
+          admin_hosts_path: Хосты
       stories:
         index:
           title: Истории
@@ -44,6 +45,8 @@ ru:
               all: Все
               new: Новые
               published: Опубликованные
+        table_fields:
+          table:
             actions:
               publish: Опубликовать
               show: Просмотреть

@@ -1,17 +1,16 @@
-# -*- encoding : utf-8 -*-
 require 'test_helper'
 
-class Api::Admin::StoriesControllerTest < ActionController::TestCase
+class Web::Admin::Stories::StatesControllerTest < ActionController::TestCase
   setup do
     @user = create :user
     @user.add_role :admin
     sign_in(@user)
-    @story = create :story
+    @story = create :story, user_id: @user.id
   end
 
   test "should update story" do
     assert !@story.published?
-    put :update, id: @story.id, state_event: :publish, format: :json
+    put :update, story_id: @story.id, state_event: :publish, format: :js
     assert_response :success
     @story.reload
     assert { @story.published? }

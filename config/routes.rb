@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 Weblog::Application.routes.draw do
 
+  get "states/update"
   root to: 'web/welcome#index'
   get 't/:tag' => 'web/welcome#index', as: :stories_by_tag
 
@@ -8,22 +9,22 @@ Weblog::Application.routes.draw do
     resources :users, only: [:new, :create]
     resources :stories, only: [:new, :create, :show] do
       scope :module => :stories do
-          resources :comments, only: [:create]
+        resources :comments, only: [:create]
       end
     end
     resource :session, only: [:new, :create, :destroy]
     namespace :admin do
       root to: 'welcome#index'
-      resources :stories, only: [:index, :show, :edit, :update, :destroy]
-    end
-  end
-
-  namespace :api do
-    namespace :admin do
-      resources :stories, only: [:update]
-    end
-    resources :stories, only: [] do
-
+      resources :stories, only: [:index, :show, :edit, :update, :destroy] do
+        scope :module => :stories do
+          resource :state, only: [:update]
+        end
+      end
+      resources :hosts, only: [:index, :update] do
+        scope :module => :hosts do
+          resource :state, only: [:update]
+        end
+      end
     end
   end
   # scope module: :web do

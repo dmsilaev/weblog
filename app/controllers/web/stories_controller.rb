@@ -10,6 +10,8 @@ class Web::StoriesController < Web::ApplicationController
     @story = StoryNewType.new(params[:story])
     @story.user = current_user
     if @story.save
+      @story.set_host!
+      @story.publish if @story.host.published?
       redirect_to root_path
     else
       render :new

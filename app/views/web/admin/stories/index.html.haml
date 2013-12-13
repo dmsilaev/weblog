@@ -13,14 +13,5 @@
       %th{ width: "23%" }=t('.table.creator')
       %th{ width: "16%"}=t('table.actions')
     - @stories.each do |story|
-      %tr
-        %td=story.published? ? t('.table.actions.published') : (link_to t('.table.actions.publish'), api_admin_story_path(story, state_event: :publish), remote: true, method: 'put', class: 'change_state')
-        %td=link_to story.title, story.url
-        %td
-          - story.tag_list.each do |tag|
-            = link_to tag, stories_by_tag_path(tag), q: tag, class: "tag tag_#{tag}"
-        %td=story.user.login
-        %td
-          = link_to t('.table.actions.show'), admin_story_path(story, q: { title_cont: "asssa" })
-          = link_to t('.table.actions.edit'), edit_admin_story_path(story)
-          = link_to t('.table.actions.destroy'), admin_story_path(story), method: :delete
+      %tr{ id: "story-#{story.id}" }
+        = render partial: 'web/admin/stories/table_fields', locals: { story: story }

@@ -1,0 +1,2 @@
+story_field = $("#story-<%= @story.id %>")
+story_field.html("<%= escape_javascript(render partial: 'web/admin/stories/table_fields', locals: { story: @story }).html_safe %>");

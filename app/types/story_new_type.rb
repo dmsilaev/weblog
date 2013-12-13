@@ -4,8 +4,6 @@ require 'net/http'
 class StoryNewType < Story
   include ApplicationType
 
-  before_create :set_domain
-
   permit :url, :description, :title, :tag_list
 
   validates_each :url do |record, attr, value|
@@ -16,7 +14,5 @@ class StoryNewType < Story
     end
   end
 
-  def set_domain
-    self.domain = URI.parse(url).host.downcase
-  end
+
 end

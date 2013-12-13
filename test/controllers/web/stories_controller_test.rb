@@ -6,6 +6,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
     @user = create :user
     @user.add_role :admin
     sign_in(@user)
+    @host = create :host
   end
 
   test "should get new" do
@@ -26,7 +27,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    story = create :story, user_id: @user.id
+    story = create :story, user_id: @user.id, host_id: @host.id
 
     get :show, id: story.id
     assert_response :success

@@ -1,0 +1,24 @@
+.box.wide.admin_stories_index
+  .legend
+    = t('.title')
+  %table.data.zebra{ cellspacing: "0", width: "100%" }
+    %tr
+      %th{ width: "8%" }
+        =simple_form_for(@search, url: admin_hosts_path, method: :get ) do |f|
+          = f.input :state_eq,
+            label: false, as: :select,
+            input_html: { onchange: "this.form.submit()" },
+            collection: { t('.table.state.all') => nil,
+                          t('.table.state.new') => 'new',
+                          t('.table.state.published') => 'published',
+                          t('.table.state.blocked') => 'blocked'},
+            required: false,
+            selected: @search_params[:state_eq]
+          %noscript
+            =f.submit
+      %th{ width: "28%" }=t('.table.name')
+      %th{ width: "16%"}=t('.table.count')
+      %th=t('.table.actions')
+    - @hosts.each do |host|
+      %tr{ id: "host-#{host.id}" }
+        = render partial: 'web/admin/hosts/table_fields', locals: { host: host }

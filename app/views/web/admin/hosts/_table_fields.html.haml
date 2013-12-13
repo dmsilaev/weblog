@@ -1,0 +1,6 @@
+%td=host.state
+%td=host.name
+%td=host.stories.count
+%td
+  - host.state_events.each do |state|
+    = link_to t(".actions.#{state}"), admin_host_state_path(host_id: host.id, state_event: state), method: 'put', remote: true

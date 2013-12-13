@@ -7,7 +7,7 @@
       - story.tag_list.each do |tag|
         = link_to tag, stories_by_tag_path(tag), q: tag, class: "tag tag_#{tag}"
     %span.domain
-      = story.domain
+      = story.host.name
     .byline
       = t('.by')
       = link_to story.user.login, root_path

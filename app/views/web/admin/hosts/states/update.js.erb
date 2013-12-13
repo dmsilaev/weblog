@@ -1,0 +1,2 @@
+host_field = $("#host-<%= @host.id %>")
+host_field.html("<%= escape_javascript(render partial: 'web/admin/hosts/table_fields', locals: { host: @host }).html_safe %>");
